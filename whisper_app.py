@@ -3,6 +3,8 @@ import whisper
 import os
 from openai import OpenAI
 
+st.set_page_config(page_title="Yan's AI Transcriber", page_icon="🎙️")
+
 # 页面配置
 st.set_page_config(page_title="AI 音频转录工具", layout="centered")
 st.title("🎙️ AI 音频转录 & 润色中心")
@@ -67,4 +69,5 @@ if uploaded_file is not None:
             full_path = os.path.join(save_path, f"{new_filename}.txt")
             with open(full_path, "w", encoding="utf-8") as f:
                 f.write(final_text)
+
             st.success(f"文件已成功保存至: {full_path}")
